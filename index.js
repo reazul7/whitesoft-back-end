@@ -5,12 +5,10 @@ const { MongoClient } = require("mongodb");
 
 require("dotenv").config();
 const port = process.env.PORT || 5050;
-// console.log(process.env.DB_USER, process.env.DB_PASS, process.env.DB_NAME);
 
 app.use(cors());
 app.use(express.json());
 
-// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.mivuu.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.5ae7d.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 // console.log(uri)
@@ -41,24 +39,3 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port);
-
-
-
-
-
-
-
-
-
-
-
-
-  // app.post('/formData', (req, res) => {
-  //   const newData = req.body;
-  //     })
-  //     console.log('add new data',newData )
-  //     formDataCollection.insertOne(newData)
-  //     .then(result => {
-  //       console.log('inserted count', result.insertedCount)
-  //       res.send(result.insertedCount > 0)
-  //     })
